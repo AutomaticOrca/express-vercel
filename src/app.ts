@@ -1,7 +1,8 @@
 import express from "express";
+import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import taskRoutes from "./routes/taskRoutes";
-
+import taskManagerRoutes from "./routes/taskManagerRoutes";
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -9,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Routes
-app.use("/api", taskRoutes);
+app.use("/tasks", taskManagerRoutes);
 
 // Start the server
 app.listen(port, () => {
