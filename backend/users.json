@@ -1,0 +1,44 @@
+[
+  {
+    "id": "u1",
+    "name": "JY Liang",
+    "email": "ljy1013@qq.com",
+    "password": "1a2s3d4f"
+  },
+  {
+    "id": "u6",
+    "name": "Emily Johnson",
+    "email": "emily.johnson@usmail.com",
+    "password": "emily2023"
+  },
+  {
+    "id": "u8",
+    "name": "Oliver Brown",
+    "email": "oliver.brown@ukmail.com",
+    "password": "oliver2023"
+  },
+  {
+    "id": "u10",
+    "name": "Yuki Tanaka",
+    "email": "yuki.tanaka@jp.com",
+    "password": "yuki2023"
+  },
+  {
+    "id": "u12",
+    "name": "Giulia Rossi",
+    "email": "giulia.rossi@it.com",
+    "password": "giulia2023"
+  },
+  {
+    "id": "u14",
+    "name": "Sophie Dubois",
+    "email": "sophie.dubois@fr.com",
+    "password": "sophie2023"
+  },
+  {
+    "id": "u2",
+    "name": "Richard Yao",
+    "email": "vrichard.yao@gmail.com",
+    "password": "chuanshanjia"
+  }
+]

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getTasks, createTask } from "./utils/api";
 import Task from "./models/Task";
 import TaskItem from "./components/TaskItem";
@@ -34,16 +34,44 @@ const dummyTasks: Task[] = [
 ];
 
 function App() {
-  const tasks = dummyTasks;
+  const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const response = await axios.get("/api/tasks/all");
+        console.log(response);
+        setTasks(response.data);
+      } catch (error) {
+        console.error("Failed to fetch tasks:", error);
+      }
+    };
+
+    fetchTasks();
+  }, []);
+
+  const handleCreateTask = async (taskName: string) => {
+    try {
+      const releaseDate = new Date().toISOString().split("T")[0]; // current date
+      const newTask = { name: taskName, releaseDate, dueDate: releaseDate }; // you can set the due date as needed
+      const response = await axios.post("/api/tasks/add", newTask);
+      setTasks((prevTasks) => [...prevTasks, response.data]);
+    } catch (error) {
+      console.error("Failed to add task:", error);
+    }
+  };
+
   return (
     <>
-      {tasks.map((task) => (
+      {JSON.stringify(tasks)}
+      {/* {tasks.map((task) => (
         <div key={task._id}>
           <h3>{task.name}</h3>
           <p>Release Date: {task.releaseDate}</p>
           <p>Due Date: {task.dueDate}</p>
         </div>
-      ))}
+      ))} */}
+      <CreateTaskForm onCreateTask={handleCreateTask} />
     </>
   );
 }

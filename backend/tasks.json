@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "_id": "1",
+    "name": "Task 1",
+    "releaseDate": "2023-05-01",
+    "dueDate": "2023-06-01",
+    "creator": "u1"
+  },
+  {
+    "_id": "2",
+    "name": "Task 2",
+    "releaseDate": "2023-05-15",
+    "dueDate": "2023-06-15",
+    "creator": "u2"
+  },
+  {
+    "_id": "3",
+    "name": "Task 3",
+    "releaseDate": "2023-06-01",
+    "dueDate": "2023-07-01",
+    "creator": "u3"
+  },
+  {
+    "_id": "4",
+    "name": "9820 Task1",
+    "releaseDate": "2024-06-12",
+    "dueDate": "2024-06-14",
+    "creator": "Imrana"
+  }
+]
